@@ -14,7 +14,7 @@ A given riddle could have multiple answers (these are my favorites!).
 | column    | data type | details                                               |
 |-----------+-----------+-------------------------------------------------------|
 | id        | integer   | not null, primary key                                 |
-| body      | string    | not null, unique (given =riddle_id=)                  |
+| body      | text      | not null, unique (given =riddle_id=)                  |
 | riddle_id | integer   | not null, foreign key (references =riddles=), indexed |
 *** jokes
 No answer is necessary (all content contained in body)
