@@ -28,15 +28,18 @@ No answer is necessary (all content contained in body)
 **** Associations
 - has many answers
 **** Validations
-- should have an answer
 - unique body
+- presence of body
 *** Answer
 **** Associations
 - has one riddle
 **** Validations
 - unique body (given riddle_id)
+- presence of body
+- presence of riddle_id
+- foreign_key of riddle_id
 *** Joke
 **** Associations
-- has one riddle
 **** Validations
-- unique body (given riddle_id)
+- unique body
+- presence of body

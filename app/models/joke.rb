@@ -9,4 +9,5 @@
 #
 
 class Joke < ApplicationRecord
+  validates :body, presence: true, uniqueness: true
 end

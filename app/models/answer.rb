@@ -10,4 +10,6 @@
 #
 
 class Answer < ApplicationRecord
+  validates :body, presence: true, uniqueness: { scope: :riddle_id }
+  validates :riddle_id, presence: true
 end

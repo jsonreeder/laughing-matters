@@ -9,4 +9,5 @@
 #
 
 class Riddle < ApplicationRecord
+  validates :body, presence: true, uniqueness: true
 end
