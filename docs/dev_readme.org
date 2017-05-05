@@ -1,1 +1,42 @@
 * Laughing Matters Development
+** Schema
+*** riddles
+Prompts to which an answer is required
+
+| column | data type | details                   |
+|--------+-----------+---------------------------|
+| id     | integer   | not null, primary key     |
+| body   | text      | not null, indexed, unique |
+*** answers
+Answers to riddles
+A given riddle could have multiple answers (these are my favorites!).
+
+| column    | data type | details                                               |
+|-----------+-----------+-------------------------------------------------------|
+| id        | integer   | not null, primary key                                 |
+| body      | string    | not null, unique (given =riddle_id=)                  |
+| riddle_id | integer   | not null, foreign key (references =riddles=), indexed |
+*** jokes
+No answer is necessary (all content contained in body)
+
+| column | data type | details                   |
+|--------+-----------+---------------------------|
+| id     | integer   | not null, primary key     |
+| body   | text      | not null, indexed, unique |
+** Model
+*** Riddle
+**** Associations
+- has many answers
+**** Validations
+- should have an answer
+- unique body
+*** Answer
+**** Associations
+- has one riddle
+**** Validations
+- unique body (given riddle_id)
+*** Joke
+**** Associations
+- has one riddle
+**** Validations
+- unique body (given riddle_id)
