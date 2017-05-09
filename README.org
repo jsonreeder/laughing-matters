@@ -1,2 +1,4 @@
 * Laughing Matters
 /An API for humor/
+
+[![Build Status](https://travis-ci.org/jsonreeder/laughing-matters.svg?branch=master)](https://travis-ci.org/jsonreeder/laughing-matters)
